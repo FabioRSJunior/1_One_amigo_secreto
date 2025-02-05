@@ -54,6 +54,16 @@
                 nomeLista.appendChild(li);
             });
         }
+        function sortearNome() {
+            if (nomes.length > 0) {
+                const indiceAleatorio = Math.floor(Math.random() * nomes.length);
+                const nomeSorteado = nomes.splice(indiceAleatorio, 1)[0];
+                document.getElementById('nomeSorteado').textContent = nomeSorteado;
+                atualizarLista();
+            } else {
+                alert('A lista está vazia!');
+            }
+        }
 
        
     </script>

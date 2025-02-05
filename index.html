@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorteio de Nomes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sorteio de Nomes</h1>
+    <input type="text" id="nomeInput" placeholder="Digite um nome">
+    <button onclick="adicionarNome()">Adicionar Nome</button>
+    <button onclick="sortearNome()">Sortear Nome</button>
+    <h2>Lista de Nomes</h2>
+    <ul id="nomeLista"></ul>
+    <h2>Nome Sorteado</h2>
+    <p id="nomeSorteado"></p>
+    
+    <script>
+        let nomes = [];
+
+        function adicionarNome() {
+            const nomeInput = document.getElementById('nomeInput');
+            const nome = nomeInput.value.trim();
+            if (nome === "") {
+                alert("O nome não pode estar em branco!");
+            } else if (/^\d/.test(nome)) {
+                alert("O nome não pode começar com um número!");
+            } else {
+                nomes.push(nome);
+                nomeInput.value = "";
+                atualizarLista();
+            }
+        }
+
+       
+    </script>
+</body>
+</html>

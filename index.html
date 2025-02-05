@@ -45,6 +45,15 @@
                 atualizarLista();
             }
         }
+        function atualizarLista() {
+            const nomeLista = document.getElementById('nomeLista');
+            nomeLista.innerHTML = "";
+            nomes.forEach((nome) => {
+                const li = document.createElement('li');
+                li.textContent = nome;
+                nomeLista.appendChild(li);
+            });
+        }
 
        
     </script>

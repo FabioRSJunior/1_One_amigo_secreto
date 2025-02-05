@@ -7,14 +7,16 @@
     <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
-    <h1>Sorteio de Nomes</h1>
-    <input type="text" id="nomeInput" placeholder="Digite um nome">
-    <button onclick="adicionarNome()">Adicionar Nome</button>
-    <button onclick="sortearNome()">Sortear Nome</button>
-    <h2>Lista de Nomes</h2>
-    <ul id="nomeLista"></ul>
-    <h2>Nome Sorteado</h2>
-    <p id="nomeSorteado"></p>
+    <div id="container">
+        <h1>Sorteio de Nomes</h1>
+        <input type="text" id="nomeInput" placeholder="Digite um nome">
+        <button onclick="adicionarNome()">Adicionar Nome</button>
+        <button onclick="sortearNome()">Sortear Nome</button>
+        <h2>Lista de Nomes</h2>
+        <ul id="nomeLista"></ul>
+        <h2>Nome Sorteado</h2>
+        <p id="nomeSorteado"></p>
+    </div>
     
     <script>
         let nomes = [];

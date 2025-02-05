@@ -5,56 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sorteio de Nomes</title>
     <link rel="stylesheet" href="assets/styles.css">
+
 </head>
 <body>
+    <main>
     <div id="container">
         <h1>Sorteio de Nomes</h1>
         <input type="text" id="nomeInput" placeholder="Digite um nome">
-        <button onclick="adicionarNome()">Adicionar Nome</button>
-        <button onclick="sortearNome()">Sortear Nome</button>
+        <button onclick="adicionarNome()">Adicionar</button>
+        <button onclick="sortearNome()">Sortear Amigo</button>
         <h2>Lista de Nomes</h2>
         <ul id="nomeLista"></ul>
         <h2>Nome Sorteado</h2>
         <p id="nomeSorteado"></p>
     </div>
+</main>
     
-    <script>
-        let nomes = [];
+<script src="app.js" defer></script>
 
-        function adicionarNome() {
-            const nomeInput = document.getElementById('nomeInput');
-            const nome = nomeInput.value.trim();
-            if (nome === "") {
-                alert("O nome não pode estar em branco!");
-            } else if (/^\d/.test(nome)) {
-                alert("O nome não pode começar com um número!");
-            } else {
-                nomes.push(nome);
-                nomeInput.value = "";
-                atualizarLista();
-            }
-        }
-        function atualizarLista() {
-            const nomeLista = document.getElementById('nomeLista');
-            nomeLista.innerHTML = "";
-            nomes.forEach((nome) => {
-                const li = document.createElement('li');
-                li.textContent = nome;
-                nomeLista.appendChild(li);
-            });
-        }
-        function sortearNome() {
-            if (nomes.length > 0) {
-                const indiceAleatorio = Math.floor(Math.random() * nomes.length);
-                const nomeSorteado = nomes.splice(indiceAleatorio, 1)[0];
-                document.getElementById('nomeSorteado').textContent = nomeSorteado;
-                atualizarLista();
-            } else {
-                alert('A lista está vazia!');
-            }
-        }
-
-       
-    </script>
 </body>
 </html>
